@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page de Test - Accès à l'App</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        .section {
+            margin: 20px 0;
+        }
+        .qr-code {
+            width: 150px;
+            margin: 10px;
+        }
+        .g-signin2 {
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenue sur la Page de Test de l'App</h1>
+    <p>Pour tester l'application, suivez les instructions ci-dessous :</p>
+
+    <!-- Section de connexion avec Google -->
+    <div class="section">
+        <h2>Connexion avec Google</h2>
+        <p>Vous pouvez vous connecter à l'application en utilisant votre compte Google. Cette connexion est essentielle pour tester toutes les fonctionnalités de l'app.</p>
+        <div class="g-signin2" data-onsuccess="onSignIn"></div>
+    </div>
+
+    <!-- Section des QR Codes -->
+    <div class="section">
+        <h2>Scannez les QR Codes</h2>
+        <p>Scannez l'un des QR codes ci-dessous pour accéder à un produit. Si vous souhaitez ajouter un deuxième animal par la suite, scannez le deuxième QR codes.</p>
+        <div>
+            <img src="qr-code-product1.png" alt="QR Code Produit 1" class="qr-code">
+            <img src="qr-code-product2.png" alt="QR Code Produit 2" class="qr-code">
+        </div>
+    </div>
+
+    <!-- Section d'informations sur Stripe -->
+    <div class="section">
+        <h2>Test des Abonnements via Stripe</h2>
+        <p>Nous avons mis Stripe en mode test pour que vous puissiez tester les paiements d'abonnements. Utilisez les informations suivantes pour effectuer un paiement de test :</p>
+        <p>Voici quelques autres cas de paiement à tester :</p>
+        <ul>
+            <li><strong>Carte de test avec échec de paiement :</strong><br>Numéro de carte : 4000 0000 0000 9995<br>Date d'expiration : 02/26<br>CVC : 123</li>
+            <li><strong>Carte de test avec succès de paiement :</strong><br>Numéro de carte : 4242 4242 4242 4242<br>Date d'expiration : 02/26<br>CVC : 497</li>
+            <li><strong>Carte de test avec carte expirée :</strong><br>Numéro de carte : 4242 4242 4242 4242<br>Date d'expiration : 01/21<br>CVC : 497</li>
+            <li><strong>Carte de test avec montant refusé :</strong><br>Numéro de carte : 4000 0000 0000 0101<br>Date d'expiration : 02/26<br>CVC : 497</li>
+        </ul>
+        <p>Vous pouvez tester les paiements sans réel débit, cela simule une transaction réussie ou échouée selon le cas.</p>
+    </div>
+    <!-- Instructions supplémentaires -->
+    <div class="section">
+        <h3>Instructions supplémentaires</h3>
+        <p>Assurez-vous que toutes les fonctionnalités sont accessibles après la connexion avec Google. Si vous avez des questions ou des problèmes, contactez-nous.</p>
+    </div>
+</body>
+</html>
