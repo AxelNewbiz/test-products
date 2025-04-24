@@ -6,42 +6,117 @@
     <title>Page de Test - Accès à l'App</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- Ajouter des icônes FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
             color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
         }
+        
+        h1 {
+            color: #2C3E50;
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        h2, h3 {
+            color: #2980B9;
+        }
+
         .section {
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .g-signin2 {
             margin: 20px 0;
         }
+
         .qr-code {
             width: 150px;
             margin: 10px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
         }
-        .g-signin2 {
-            margin: 20px 0;
+
+        .qr-code:hover {
+            transform: scale(1.1);
+        }
+
+        ul {
+            text-align: left;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        .btn-test {
+            background-color: #27AE60;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-test:hover {
+            background-color: #2ecc71;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 14px;
+            color: #7F8C8D;
+        }
+
+        .footer a {
+            color: #2980B9;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur la Page de Test de l'App</h1>
+    <h1><i class="fas fa-mobile-alt"></i> Bienvenue sur la Page de Test de l'App</h1>
     <p>Pour tester l'application, suivez les instructions ci-dessous :</p>
 
     <!-- Section de connexion avec Google -->
     <div class="section">
-        <h2>Connexion avec Google</h2>
+        <h2 class="section-title"><i class="fab fa-google"></i> Connexion avec Google</h2>
         <p>Vous pouvez vous connecter à l'application en utilisant votre compte Google. Cette connexion est essentielle pour tester toutes les fonctionnalités de l'app.</p>
         <div class="g-signin2" data-onsuccess="onSignIn"></div>
     </div>
 
     <!-- Section des QR Codes -->
     <div class="section">
-        <h2>Scannez les QR Codes</h2>
-        <p>Scannez l'un des QR codes ci-dessous pour accéder à un produit. Si vous souhaitez ajouter un deuxième animal par la suite, scannez le deuxième QR codes.</br>Les codes QR sont valable 7 jours à compter du 24/04/2025.</p>
+        <h2 class="section-title"><i class="fas fa-qrcode"></i> Scannez les QR Codes</h2>
+        <p>Scannez l'un des QR codes ci-dessous pour accéder à un produit. Si vous souhaitez ajouter un deuxième animal par la suite, scannez le deuxième QR code.</br>Les codes QR sont valables 7 jours à compter du 24/04/2025.</p>
         <div>
             <img src="qr-code-product1.png" alt="QR Code Produit 1" class="qr-code">
             <img src="qr-code-product2.png" alt="QR Code Produit 2" class="qr-code">
@@ -50,7 +125,7 @@
 
     <!-- Section d'informations sur Stripe -->
     <div class="section">
-        <h2>Test des Abonnements via Stripe</h2>
+        <h2 class="section-title"><i class="fas fa-credit-card"></i> Test des Abonnements via Stripe</h2>
         <p>Nous avons mis Stripe en mode test pour que vous puissiez tester les paiements d'abonnements. Utilisez les informations suivantes pour effectuer un paiement de test :</p>
         <p>Voici quelques autres cas de paiement à tester :</p>
         <ul>
@@ -61,10 +136,16 @@
         </ul>
         <p>Vous pouvez tester les paiements sans réel débit, cela simule une transaction réussie ou échouée selon le cas.</p>
     </div>
+
     <!-- Instructions supplémentaires -->
     <div class="section">
-        <h3>Instructions supplémentaires</h3>
+        <h3><i class="fas fa-info-circle"></i> Instructions supplémentaires</h3>
         <p>Assurez-vous que toutes les fonctionnalités sont accessibles après la connexion avec Google. Si vous avez des questions ou des problèmes, contactez-nous.</p>
+        <a href="#" class="btn-test">Retour à l'accueil</a>
+    </div>
+
+    <div class="footer">
+        <p>Page de test développée par <a href="#">Votre Nom ou Votre Entreprise</a>. Tous droits réservés.</p>
     </div>
 </body>
 </html>
